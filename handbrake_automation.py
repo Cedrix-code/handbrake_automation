@@ -70,13 +70,13 @@ def automate_handbrake(input_folder, output_folder):
 
     end_time = time.time()
     total_time = end_time - start_time
-
-print(f"Total time taken to encode all videos: {total_time // 3600:.0f} hours and {(total_time % 3600) // 60:.0f} minutes")
+    return total_time
 
 def main():
     input_folder = input("Enter the input folder path: ")
     output_folder = input("Enter the output folder path: ")
-    automate_handbrake(input_folder, output_folder)
+    total_time = automate_handbrake(input_folder, output_folder)
+    print(f"Total time taken to encode all videos: {total_time // 3600:.0f} hours and {(total_time % 3600) // 60:.0f} minutes")
 
 if __name__ == "__main__":
     main()
